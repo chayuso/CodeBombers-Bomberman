@@ -1,0 +1,49 @@
+Sprint Report 4 for 5/23
+Team Name: CodeBombers
+ 
+Team Members:
+@cayuso - Christopher Ayuso
+@whitnet - Whitney Tran
+@mengfanw - Mengfan Wang
+@jhsosa - Joshua Sosa
+@dtwilli1 - Daniel Williams
+ 
+What was accomplished this sprint:
+We had to revamp how bombs work to ensure explosions and 
+the map is synced, also solved unsynced local client clocks.
+Now, bombs’ initial placed time is based on the client’s 
+estimated Trip Time to compensate a late bomb. We also 
+restructured how the server sends messages to clients. The 
+server keeps track of each client’s player number, which is 
+assigned once a client finishes logging into a game/creates 
+an account. This solves multiple clients creating new accounts 
+at the same time and prepares us for when the game is structured 
+to handle multiple game sessions. Up to four players can now 
+play in a session with item pickups and game over states synced. 
+We have also tested with clumsy in order to test for any game 
+breaking lag bugs. With our client position sync, item pickup 
+sync, bomb sync, death check system polished, we can mitigate 
+latency between clients and also have checks on clients for 
+duplicated messages. Positions are updated as often as latency 
+estimation, once every 100+n*i milliseconds (n = Clients In-Game,  
+i = Throttle), items have rollbacks to adjust to first player to 
+pick up, bombs explode times adjust to latency and sync map, and 
+the game over state pauses the game first to allow any death event 
+messages to pass through the server before declaring a winner in 
+order to account for tie game states. Finally, we now have a welcome 
+screen with disconnect messages so clients return to the lobby if 
+they leave a game or disconnect.
+ 
+Our plans for the following sprint:
+We need to allow clients to create multiple game sessions/lobbies of 
+bomberman on our server. Players should be able to join different 
+sessions by entering the session name on the login screen. A new 
+session will be prompted and created if the session name entered does 
+not exist. We also plan on completing the extra credit tasks by 
+implementing a stat screen, where clients can view their game 
+statistics they’ve achieved with their account. We plan on enhancing 
+our current lobby chat room feature to handle multiple players and 
+game sessions, where players can talk and invite each other to their 
+game sessions. Lastly, we will perform tests on multiple edge cases 
+in order to filter bugs and clean up our code for the final sprint 
+deliverable.

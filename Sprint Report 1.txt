@@ -1,0 +1,28 @@
+Sprint Report 1 for 4/13
+Team Name: CodeBombers
+
+Team Members:
+@cayuso - Christopher Ayuso
+@whitnet - Whitney Tran
+@mengfanw - Mengfan Wang
+@jhsosa - Joshua Sosa
+@dtwilli1 - Daniel Williams
+
+Project We Chose: Bomberman
+
+Why We Chose It: We found that our team members are all familiar with Bomberman and 
+this allows us to discuss possible high-level design choices for creating an effective 
+client-server architecture. We also chose to use JavaScript, HTML and a C server 
+because we are more familiar with designing network games with a client server 
+architecture using these programming languages. 
+
+Source code We Found: 
+21st-century-bomberman - https://github.com/chaficnajjar/21st-century-bomberman
+
+Our Plans for the Following Two Weeks: 
+We will and have began discussing the possible problems with certain implementations. 
+Also, our group plans on meeting 3 times a week to further create the design document 
+for Sprint 2A. We plan on moving most of the JavaScript game logic into a C server 
+to create either a thin client server architecture where the client only has to worry 
+about rendering, or a hybrid of logic left in clients based on discussed design 
+decisions. 

@@ -1,0 +1,33 @@
+Sprint Report 3 for 5/16
+Team Name: CodeBombers
+
+Team Members:
+@cayuso - Christopher Ayuso
+@whitnet - Whitney Tran
+@mengfanw - Mengfan Wang
+@jhsosa - Joshua Sosa
+@dtwilli1 - Daniel Williams
+
+What was accomplished this sprint:
+Player 3 and 4 are able to connect to the server and play. 
+Bombs and movements are synced on all 4 players Power ups 
+and game over condition are synced for 2 player games.. 
+Server is able to tell which client is the first to get 
+the powerup. If powerup is given to the wrong player, due 
+to latency and timestamp check, the server would reduce 
+it from the wrong player and give it to the correct player. 
+We also made our server run on an ics server instead of our 
+own computer and have a MySQL database hosted on ics server.
+
+Our Plans for the Following Sprint: 
+We plan on fixing multiple latency and connection bugs with 
+the current system. Such fixes include allowing multiple 
+players to be able to create a new account at once before 
+being registered into the game. Another fix regarding  a 3 - 
+4 player game is to sync the game over screen, including 
+removing dead players, and power up pickups for players 3 and 
+4 (Cannot currently pick up power ups).Bombs will also have to 
+be redefined to be able to handle heavy latency, such as 
+ensuring the bomb has exploded in all clients. Lastly, when 
+players disconnect, server should kill the character in the 
+game or end the game properly. 

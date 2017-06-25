@@ -1,0 +1,32 @@
+Sprint Report 2a for 5/4
+Team Name: CodeBombers
+
+Team Members:
+@cayuso - Christopher Ayuso
+@whitnet - Whitney Tran
+@mengfanw - Mengfan Wang
+@jhsosa - Joshua Sosa
+@dtwilli1 - Daniel Williams
+
+What was accomplished this sprint:
+Clients simulated game in html programmed in JavaScript and connect to a server,
+programmed in C++, using its ip address and port. Created a hybrid network 
+architecture where client movement is computed locally for their player and
+positions are sent on an interval along with latency calculations to the server. 
+Bombs are synced with the client requesting a bomb to be placed in the position
+they were requested in, the server then sends to both clients along with the time 
+it was initially placed so bombs explode at the same time. Bomb exploding and wall 
+breaking is calculated by the client. Clients check their own death and send to 
+the server a death event for their character. Game start, restart, and game over 
+screens are synced. Game logic and state was also translated to server.  
+
+Our Plans for the Following Sprint: 
+Move our database to a more refined system such as SQL. hosted on a ICS server.  
+We also plan on implementing interpolation between clients to smoothing out 
+position syncing rather than teleporting. We also plan on better syncing item 
+collecting so latency won't cause problems. Another latency issue we wish to 
+mediate is having a timeout when the client is experiencing high latency and 
+hasn't received a response from the server from the latency estimation interval, 
+in which the clients position will locally roll back to their last sent position. 
+Lastly, we wish to include more than two players, up to four, as we prepare to
+develop multiple game sessions.

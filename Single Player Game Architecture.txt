@@ -1,0 +1,55 @@
+Single Player Game Architecture - CodeBombers
+
+board.js and levels.js
+-The board function takes in the width, height, and level number to initiate an instance 
+Board object. The width and height are the dimensions of the board. The level number 
+specifies which level to take from the levels.js file. The levels.js file contains the 
+definitions of levels in a 2D array format where 2 is a wall, 1 is a breakable block, 
+and 0 is an empty space. Within the Board class we can specify which powerups are 
+spawned. The powerups are then put into a 2D array that matches the size of the board. 
+Then they are randomly distrubuted into breakable objects slots of the board via nested 
+loops and a random number generator.
+
+utils.js
+-The utils class contains multiple functions. bitmap_position converts pixel coordinates 
+to bitmap coordinates. This is because the bitmap is scaled to a larger size which 
+allows us to draw on grid like blocks on canvas of a specified size. pixel_position 
+does the opposite of bitmap_position. create_2D_array literally creates a 2D array 
+with rows and columns as input parameters. draw_block draws a rectangle with x, y 
+being the top left corner of a block with a width and height. fetch_sprite simply 
+fetches the sprite information (e.g. x,y coordinates, and width and height of sprite 
+image) for use in drawing sprites using the player.js class file.
+
+Bomb.js 
+basically creates a bomb and deal with the bomb. There is a timer which counts 
+time elapsed since the bomb is created. The bomb will get bigger as time elapsed. 
+It will finally explode when time exceeds 2000 and keep killing players until time 
+exceeds 2500. The draw function simply draws the bomb changes from small bomb to big 
+bomb and draws explosion in four directions. Destroy_blocks function destroys blocks 
+that are in the bomb¡¯s radius when the bomb explodes. Kill_players function kills 
+players that are in the bomb¡¯s radius from the bomb explodes until the bomb is 
+extinguished.
+
+bomberman.js
+-Init function creates the canvas, delcares and uses all the sprites, and all the player 
+objects. The main function is used to loop the game to update the game state and draws 
+the screen every time it's called. The input function has two key listeners, one for 
+key up and down that determines derection. The update function updates the game state 
+and draw function draws the canvas using the current game state.
+
+Player.js
+
+-The Player object holds all of the basic info for individual players: which 
+sprite_sheet is used, the starting position, whether they are alive or invincible, 
+their velocity, direction they are currently facing, and the current number of bombs 
+and power ups they obtained.
+-Player. prototype. move handles position updating depending on input and checks to see 
+if collision is detected. If collision is detected, then the coordinates are reverted. 
+There is also a two direction input check to produce a slide effect 
+(Planning to remove). If movement is legal, calculate the number of sprite for duration 
+of animation.
+-Player. prototype. draw handles drawing the updated player using the animation 
+calculated on Player. prototype. move.
+Player. prototype. kill checks to see if player dies or not.
+Player. prototype. add_power_up checks if player obtains power up and adjusts player 
+info: velocity, bomb_radius, or bomb_limit.

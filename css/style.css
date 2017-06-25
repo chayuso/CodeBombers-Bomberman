@@ -1,0 +1,147 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
+
+html {
+    color: black;
+}
+
+body {
+    background-color: #e1e1e1;
+    margin: 0;
+    padding: 0;
+}
+
+#title {
+	padding: 2em;
+    color: white;
+    background-color: #202020;
+    clear: left;
+    text-align: left;
+	font-size: 20px;
+}
+
+#container {
+    width:90%;
+    margin: 0 auto;
+    clear:both;
+}
+
+#inputContainer {
+	width:19%;
+	float:left;
+	padding:1%;
+}
+
+#confirmationContainer {
+	width:100%;
+	clear:both;
+}
+
+#connectButton {
+}
+
+#yesButton {
+	width:50%;
+	float:left;
+}
+
+#noButton {
+	width:50%;
+	float:right;
+}
+
+#addressPortContainer {
+	width:15%;
+
+}
+
+#estimateContainer {
+	width:15%;
+
+}
+
+#userPassContainer {
+	width:40%;
+
+}
+
+#chatContainer {
+    width:19%;
+    float:left;
+	padding:1%;
+}
+
+#Lobby1Container {
+    float:left;
+}
+
+#Lobby1 {
+    float:left;
+}
+
+#Spectate1 {
+    float:left;
+}
+
+#Lobby2Container {
+    float: left;
+}
+
+#Lobby2 {
+    float: left;
+}
+
+#Spectate2 {
+    float: left;
+}
+
+#Lobby3Container {
+    float: left;
+}
+
+#Lobby3 {
+    float: left;
+}
+
+#Spectate3 {
+    float: left;
+}
+
+#Lobby4Container {
+    float: left;
+}
+
+#Lobby4 {
+    float: left;
+}
+
+#Spectate4 {
+    float: left;
+}
+
+#log1 {
+    width:33%;
+}
+
+#log2 {
+    width:33%;
+}
+
+#startButton {
+
+}
+
+#canvas {
+    display: block;
+    border: 1px solid #000;
+	background-color: #545454;
+    margin: 0 auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+#canvasContainer {
+	width:55%;
+	float:left;
+}

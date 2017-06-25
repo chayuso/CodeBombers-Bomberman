@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Title of the page (displayed inside the browser's tab) -->
+    <title>CodeBombers Bomberman</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head><body>
+    <!-- JS -->
+    <script language="javascript" src="js/utils.js"></script>
+    <script language="javascript" src="js/levels.js"></script>
+    <script language="javascript" src="js/board.js"></script>
+    <script language="javascript" src="js/bomb.js"></script>
+    <script language="javascript" src="js/button.js"></script>
+    <script language="javascript" src="js/player.js"></script>
+    <script language="javascript" src="js/bomberman.js"></script>
+    <script language="javascript" src="js/network.js"></script>
+    <script language="javascript" src="js/fancywebsocket.js"></script>    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    
+    <header id="title">
+        <h1>CodeBombers Bomberman</h1>
+    </header>
+
+    <div id="container">
+        <div id="inputContainer">
+            <div id="userPassContainer">
+
+                Player ID: <input type='text' id='pid' name='pid' value="">
+	            Player Password: <input type="password" id="pw" name="pw" value="">
+            </div>
+            <script> makeRandomID() </script>
+            <br />
+            <div id="confirmationContainer">
+                <div id="connectButton">
+    		        <input type="button" id="NetworkConnect" value="Network Connect" onClick="ConnectToServer();" />
+	            </div>
+                <div id="question" style="visibility:hidden">
+                    This username does not exist. Would you like to create a new account instead?
+                </div>
+                <div id="yesButton">
+    		        <input type="button" id="yes" value="Yes" style="visibility:hidden"onClick="Yes();" />
+	            </div>
+                <div class="noButton">
+    		        <input type="button" id="no" value="No" style="visibility:hidden" onClick="No();" />
+	            </div>
+            </div>
+            <br />
+            <div id="addressPortContainer">
+                Server IP: <input type='text' id='ip' name='ip' value="cogslab-vm1.ics.uci.edu">
+                <!--Server IP: <input type='text' id='ip' name='ip' value="127.0.0.1">-->
+                Server Port: <input type='text' id='port' name='port' value="1111"><br/>
+            </div>
+            <br />
+            <div id="estimateContainer">
+                EstimatedRTT: <input type='text' id='RTT' name='RTT' value="0ms">
+            </div>
+            <div id='lobbyListContainer'>
+                Lobby List:
+                <div>
+                    <textarea rows="8" cols="40" id='lobbyList' name='lobbyList' readonly='readonly'></textarea><br/>
+                </div>
+            </div>
+            <div id="refreshButton">
+                <input type="button" id="Refresh" value="Refresh" onclick="RefreshLobbyList();" />
+            </div>
+        </div>
+
+        <div id="canvasContainer">
+            <canvas id="canvas" width="600" height="600"></canvas>
+        </div>
+
+        <div id="chatContainer">
+            <div id='log1'>
+                Chat Log <textarea rows="5" cols="40" id='chatlog' name='chatlog' readonly='readonly'></textarea><br/>
+                Send Message (Enter): <input type='text' id='chat' name='chat' />
+            </div>
+            <br/>
+            <div id='log2'>
+		        Log: <textarea rows="5" cols="40" id='log' name='log' readonly='readonly'></textarea>
+		        Send to Server: <input type='text' id='message' name='message' />
+            </div>
+                <br />
+                Enter Lobby name and press (Enter) to join: <input type="text" id="lobby" name="lobby" value="">
+                <br />
+                <div id="JoinCreateLobby">
+                    <input type="button" id="JoinCreateLobby" value="Join/Create Lobby" onclick="JoinCreateLobby();" />
+                </div>
+                <input type="button" id="Spectate" value="Spectate" onclick="Spectate();" />
+                <br /> <!--Click on (Spectate) to watch instead!-->
+                <div id="spectateText" style="visibility:hidden">
+                    Click on (Spectate) to watch instead!
+                </div>
+                
+                <div id="startButton">
+    		    	<input type="button" id="Start" value="Start" onClick="Start();" />
+	        	</div>
+    
+            	<div id="leaveButton">
+                	<input type="button" id="Leave" value="Logout" onclick="Leave();" />
+            	</div>
+	       </div>
+
+            
+            	
+            
+        </div>
+    </div>
+
+    <script> drawMenu(1) </script>
+    <script>document.getElementById('Spectate').style.visibility = 'hidden';</script>
+	<script>document.getElementById('Start').style.visibility = 'hidden';</script>
+    <script>document.getElementById('JoinCreateLobby').style.visibility = 'hidden';</script>
+    <script>document.getElementById('lobby').disabled = true;</script>
+    <script>document.getElementById('refreshButton').style.visibility = 'hidden';</script>
+    <script>document.getElementById('Leave').style.visibility = 'hidden';</script>
+	<script>document.getElementById('Restart').style.visibility = 'hidden';</script>
+	<script>log("[Client] Waiting for server information...");</script>
+
+
+</body>
+</html>

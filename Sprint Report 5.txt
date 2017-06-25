@@ -1,0 +1,39 @@
+Sprint Report 5 for 6/8
+Team Name: CodeBombers
+ 
+Team Members:
+@cayuso - Christopher Ayuso
+@whitnet - Whitney Tran
+@mengfanw - Mengfan Wang
+@jhsosa - Joshua Sosa
+@dtwilli1 - Daniel Williams
+
+What was accomplished this sprint:
+Prior to working on this sprint there were very few bugs. We accomplished
+creating a lobby system that was static at first. (i.e. there were 4 
+hardcoded lobbies to bug test and work with) After discovering some bugs 
+we worked them out and allowed users to create their own game instance 
+lobbies by typing in their own name for a lobby. Then we allowed other 
+users to join these lobbies. Note that if no name is specified then a 
+default session is created if it doesn't exist or joins if it does exist. 
+We already had a global chat implemented in an earlier sprint. So to further 
+our lobby system we created a lobby list text box that users can refresh to see 
+the status of current games in session or waiting for players. The amount of 
+players in each game is also displayed in the lobby list. This makes it easy 
+for players to message in the global chat and invite players to their game or 
+ask if it's okay to join a game. We also started on the spectating feature
+in order to achieve both extra credit requirements where users can join games
+as a spectator rather than a player with input. Prior to working on the 
+spectating mode we misunderstood a extra credit and worked on a statistics 
+display which ended up being scraped in order to prioritize the milestone
+requirements, extra credit, and bug testing. 
+
+What was difficult in this sprint:
+Many bugs were found after creating the lobby system. We had powerups going to 
+the wrong players, players unable to set bombs, the map not syncing properly, 
+joining multiple lobbies bugs, game restart bugs, and player disconnect bugs. 
+On top of this we already had duplicate death bugs, start bugs, restart message 
+issues, map reseting issues, and a random 4th player not functioning bug. In the 
+end we sorted out bugs and then some of those bugs resurfaced when merging code. 
+Overall, our team had to get organized and have a lot of debug printing to sort 
+everything out. All known bugs have been fixed at this point.

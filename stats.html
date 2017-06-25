@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Title of the page (displayed inside the browser's tab) -->
+    <title>CodeBombers Bomberman Statistics</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head><body>
+<!-- JS -->
+<script language="javascript" src="js/utils.js"></script>
+<script language="javascript" src="js/levels.js"></script>
+<script language="javascript" src="js/board.js"></script>
+<script language="javascript" src="js/bomb.js"></script>
+<script language="javascript" src="js/button.js"></script>
+<script language="javascript" src="js/player.js"></script>
+<script language="javascript" src="js/bomberman.js"></script>
+<script language="javascript" src="js/network.js"></script>
+<script language="javascript" src="js/fancywebsocket.js"></script>    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<header id="title">
+    <h1>CodeBombers Bomberman Statistics</h1>
+</header>
+
+<div id="container">
+    <div id="inputContainer">
+        <div id="userPassContainer">
+            Player ID: <input type='text' id='pid' name='pid' value="">
+            Player Password: <input type="password" id="pw" name="pw" value="">
+        </div>
+        <script> makeRandomID() </script>
+        <br />
+        <div id="confirmationContainer">
+            <div id="connectButton">
+                <input type="button" id="NetworkConnect" value="Network Connect" onClick="ConnectToServer();" />
+            </div>
+            <div id="question" style="visibility:hidden">
+                This username does not exist. Would you like to create a new account instead?
+            </div>
+            <div id="yesButton">
+                <input type="button" id="yes" value="Yes" style="visibility:hidden"onClick="Yes();" />
+            </div>
+            <div class="noButton">
+                <input type="button" id="no" value="No" style="visibility:hidden" onClick="No();" />
+            </div>
+        </div>
+        <br />
+        <div id="addressPortContainer">
+            Server IP: <input type='text' id='ip' name='ip' value="cogslab-vm1.ics.uci.edu">
+            Server Port: <input type='text' id='port' name='port' value="1111"><br/>
+        </div>
+    </div>
+
+    <div id='log3'>
+        <textarea rows="10" cols="100" id='statstable' name='statstable' readonly='readonly'></textarea><br/>
+    </div>
+    <br/>
+    <div id="refreshButton">
+        <input type="button" id="Refresh" value="Refresh" onclick="Refresh();" />
+    </div>
+
+    <div id="chatContainer">
+        <br/>
+        <div id='log2'>
+            Log: <textarea rows="5" cols="40" id='log' name='log' readonly='readonly'></textarea>
+        </div>
+    </div>
+
+</div>
+
+<script>statsTable("Hit refresh to get a list of current statistics...");</script>
+
+</body>
+</html>
